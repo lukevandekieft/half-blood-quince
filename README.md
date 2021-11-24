@@ -17,18 +17,28 @@ While Half-Blood Quince isn't as powerful or flashy as others it allows unpreced
 <br>
 <br>
 
-**Current Goals:**
+**V3 Goals:**
 
-* 'Suggested Recipes' and 'Search Recipes' sections from 3rd parties.
-* Improve messages and parsing for user login fields.
-* Improve functions for parsing user-submitted data like ingredients.
-* Add servings feature that alters ingredient list amounts multiplicatively based on user-entered serving number.
-* Allow each individual ingredient/direction to have its own note(s) - MVP data structure just has a lump of notes alluding to a lump of data.
-* Add “considered” note type to be distinguished from “confirmed” notes (e.g. “Try serving with rice” vs. “can sub rice for flatbread”).
-* Give recipes tags & categories for searching & organizing.
-* API calls to spoontacular’s Food API, Edamam’s Recipe Search API, or similar database.
-* Better solutions for button selection: currently menu icon has no pretty option to show it's been tabbed.
+* Lazy loading so 100 images aren't loaded at once
+* Restyle Menu - remove wood background & make buttons cleaner
+* Restyle recipe pages - recipe tags, buttons, & image
+* Improve parsing of user-submitted data
+* Allow searching for non-title fields
+* Create demo page with READ but no WRITE access
+* Add servings feature that alters ingredient amounts
+* Change data organization (showing recipe name AA0-323f.... first doesn't mean anything)
 
+**Past Iterations**
+* **v1.0**: 2018 build for Epicodus capstone project
+    * Recipe CRUD
+    * User management with OAuth support
+    * Firebase NoSQL data support
+    * Live deployment to halfbloodquince.com
+* **v2.0**: 2020 upgrade for appearance and quality
+    * Switch to Material Components library
+    * Major styles overhaul - remove gaudy appearances
+    * Switch to modular, DRY code from code school first draft
+    * Add search function with recipe tags and ratings
 
 ## Setup/Installation Requirements
 
@@ -99,4 +109,4 @@ If you have any concerns or suggestions please contact Luke Vandekieft at vandek
 
 *This software is licensed under the MIT License.*
 
-Copyright (c) 2018 **_Luke Vandekieft_**
+Copyright (c) 2021 **_Luke Vandekieft_**
