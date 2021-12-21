@@ -19,7 +19,7 @@ class HomePage extends React.Component{
   }
 
   render() {
-    const { filterList, recipes, searchValue, user } = this.props;
+    const { filterList, recipes, searchValue } = this.props;
 
     //Toggle recipe header when search is active
     let headerMessage;

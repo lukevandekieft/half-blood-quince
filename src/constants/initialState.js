@@ -7,11 +7,11 @@ export const initialState = {
   mainMenuShowing: false,
   searchValue: null,
   user: {
-    uid: 'lu4NGxU9J1SKpjmsVArU3kNeO5E2',
+    uid: guestId,
     guestUser: true,
   },
   users : {
-    'lu4NGxU9J1SKpjmsVArU3kNeO5E2' : {
+    [guestId] : {
       lastRecipeSearch : {
         isFetching: false,
         searchList: null,

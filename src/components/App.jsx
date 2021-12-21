@@ -13,6 +13,7 @@ import MenuModal from './Widgets/MenuModal/MenuModal.jsx';
 import NavBar from './NavBar/NavBar.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import PublicRoute from './Routes/PublicRoute.jsx';
+import LoggedOutRoute from './Routes/LoggedOutRoute.jsx';
 import RecipeDetail from './RecipeDetail/RecipeDetail.jsx';
 import RecipeEdit from './RecipeEditPage/RecipeEdit.jsx';
 import Route404 from './Route404/Route404.jsx';
@@ -59,12 +60,12 @@ class App extends Component {
             />
             <Switch>
               <PublicRoute exact path='/' component={props => <HomePage {...props} />}/>
-              <PublicRoute exact path='/recipe/:recipeId' component={RecipeDetail}/>
-              <PrivateRoute exact path='/add-recipe' component={RecipeEdit}/>
-              <PrivateRoute exact path='/edit-recipe/:recipeId' component={RecipeEdit}/>
-              <PrivateRoute exact path='/discover-recipes' component={DiscoverPage}/>
-              <PublicRoute exact path='/login' component={LoginPage}/>
-              <PublicRoute exact path='/signup' component={SignUpPage}/>
+              <PublicRoute exact path='/recipe/:recipeId' component={props => <RecipeDetail {...props} />}/>
+              <PrivateRoute exact path='/add-recipe' component={props => <RecipeEdit {...props} />}/>
+              <PrivateRoute exact path='/edit-recipe/:recipeId' component={props => <RecipeEdit {...props} />}/>
+              <PrivateRoute exact path='/discover-recipes' component={props => <DiscoverPage {...props} />}/>
+              <LoggedOutRoute exact path='/login' component={props => <LoginPage {...props} />}/>
+              <LoggedOutRoute exact path='/signup' component={props => <SignUpPage {...props} />}/>
               <Route component={Route404} />
             </Switch>
           </div>

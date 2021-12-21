@@ -1,19 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { newUserLogin, newUserLogout } from '../../../actions';
-import Button from '@material-ui/core/Button';
+import { newUserLogout } from '../../../actions';
 
 import NavButton from '../NavButton/NavButton';
 
 function MenuModal(props) {
   const { dispatch, mainMenuShowing, onToggleMenu } = props;
-
-  //Login OAuth providers
-  const handleLogin = (provider) => {
-    dispatch(newUserLogin(provider));
-    onToggleMenu(mainMenuShowing);
-  };
 
   //Logout current user & close modal
   const handleLogout = () => {
@@ -34,33 +27,45 @@ function MenuModal(props) {
       <div className='modal-body'>
         <div className='accordion-list'>
           <div className='accordion-footer'>
-            { (!props.user.uid || !props.user.guestUser) && (
-              <button className='loginLogout button-white' onClick={() => {handleLogin('google');}}>Login</button>)
-            }
+            { (!props.user.uid || props.user.guestUser) && (
+              <div onClick={() => {handleRoute();}}>
+                <NavButton
+                  linkPath='/login'
+                  linkText='Login'
+                  color='white'
+                />
+              </div>
+            )}
             { (props.user.uid && !props.user.guestUser) && (
               <React.Fragment>
-                <div onClick={() => {handleRoute('/');}}>
+                <div onClick={() => {handleRoute();}}>
                   <NavButton
                     linkPath='/'
                     linkText='View Recipes'
                     color='white'
                   />
                 </div>
-                <div onClick={() => {handleRoute('/discover-recipes');}}>
+                <div onClick={() => {handleRoute();}}>
                   <NavButton
                     linkPath='/discover-recipes'
                     linkText='Discover Recipes'
                     color='white'
                   />
                 </div>
-                <div onClick={() => {handleRoute('/add-recipe');}}>
+                <div onClick={() => {handleRoute();}}>
                   <NavButton
                     linkPath='/add-recipe'
                     linkText='Add Recipe'
                     color='white'
                   />
                 </div>
-                <Button className='loginLogout button-white' onClick={() => {handleLogout();}} variant="contained">Logout</Button>
+                <div onClick={() => {handleLogout();}}>
+                  <NavButton
+                    linkPath='/login'
+                    linkText='Logout'
+                    color='white'
+                  />
+                </div>
               </React.Fragment>
             )}
           </div>

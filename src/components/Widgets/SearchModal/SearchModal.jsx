@@ -15,7 +15,7 @@ class SearchModal extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      placeholderText: null,
+      placeholderText: 'Search Recipes...',
       searchMenuOpen: false,
       searchValue: ''
     }
@@ -78,15 +78,6 @@ class SearchModal extends React.Component{
   );
 
   render () {
-    //Sets placeholder based on router
-    if (!this.state.placeholderText) {
-      if (this.props.location.pathname === '/discover-recipes') {
-        this.setState({placeholderText: 'Search New Recipes...'});
-      } else {
-        this.setState({placeholderText: 'Search Your Recipes...'});
-      }
-    }
-
     return (
       <div key={"top"}>
         <button className="searchBox" onClick={this.toggleMenuOpen(true)}>

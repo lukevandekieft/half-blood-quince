@@ -55,6 +55,7 @@ class LoginPage extends React.Component{
 
             <div className= 'loginSection demo'>
               <h2>Welcome to Half-Blood Quince!</h2>
+              {/* TODO: "Continue as guest" */}
               <p>Feel free to look around on our demo account below:</p>
               <button className='loginButton demo' onClick={() =>{handleLogin({email: 'ramb222@yahoo.com', password: 'testpassword'})}}>View Demo</button>
             </div>

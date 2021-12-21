@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import Loader from '../Widgets/Loader/Loader';
 
-const PublicRoute = ({
+const LoggedOutRoute = ({
   component: Component,
   loadedInitialState,
   user,
@@ -14,9 +14,15 @@ const PublicRoute = ({
   //If user exists redirect to HomePage, otherwise display component
   <Route exact {...otherProps} render={(props) => {
     if (loadedInitialState) {
-      return (
-        <Component {...props} />
-      );
+      if (user.uid && !user.guestUser) {
+        return (
+          <Redirect to='/' />
+        );
+      } else {
+        return (
+          <Component {...props} />
+        );
+      }
     } else {
       return (
         <Loader />
@@ -30,10 +36,10 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
-PublicRoute.propTypes = {
+LoggedOutRoute.propTypes = {
   component: PropTypes.func,
   loadedInitialState: PropTypes.bool,
   user: PropTypes.object,
 };
 
-export default withRouter(connect(mapStateToProps)(PublicRoute));
+export default withRouter(connect(mapStateToProps)(LoggedOutRoute));
