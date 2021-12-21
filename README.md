@@ -110,3 +110,10 @@ If you have any concerns or suggestions please contact Luke Vandekieft at vandek
 *This software is licensed under the MIT License.*
 
 Copyright (c) 2021 **_Luke Vandekieft_**
+
+## TODO
+- Replace "Guest login" with "Continue as guest"
+- Get "guestUser" state working as planned
+- double-check that normal flow works as expected
+- hide edit & add buttons for guest user
+- NEXT: make pretty? # of times recipe made? Search more than name?
