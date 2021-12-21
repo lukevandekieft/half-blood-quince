@@ -1,3 +1,5 @@
+import { guestId } from './guestId';
+
 export const initialState = {
   filterList: [],
   isRouting: false,
@@ -5,10 +7,11 @@ export const initialState = {
   mainMenuShowing: false,
   searchValue: null,
   user: {
-    uid: 'initialLoadUser',
+    uid: 'lu4NGxU9J1SKpjmsVArU3kNeO5E2',
+    guestUser: true,
   },
   users : {
-    'initialLoadUser' : {
+    'lu4NGxU9J1SKpjmsVArU3kNeO5E2' : {
       lastRecipeSearch : {
         isFetching: false,
         searchList: null,

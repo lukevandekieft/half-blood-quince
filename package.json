@@ -1,6 +1,6 @@
 {
   "name": "half-blood-quince",
-  "version": "0.1.0",
+  "version": "2.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -23,8 +23,8 @@
   },
   "scripts": {
     "deploy": "bash ./scripts/deploy.bash",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint-fix": "eslint src/**/*.{jsx,js} --fix"

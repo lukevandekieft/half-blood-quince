@@ -58,9 +58,9 @@ class App extends Component {
               onToggleMenu = {this.handleToggleMainMenu}
             />
             <Switch>
-              <PrivateRoute exact path='/' component={HomePage}/>
+              <PublicRoute exact path='/' component={props => <HomePage {...props} />}/>
+              <PublicRoute exact path='/recipe/:recipeId' component={RecipeDetail}/>
               <PrivateRoute exact path='/add-recipe' component={RecipeEdit}/>
-              <PrivateRoute exact path='/recipe/:recipeId' component={RecipeDetail}/>
               <PrivateRoute exact path='/edit-recipe/:recipeId' component={RecipeEdit}/>
               <PrivateRoute exact path='/discover-recipes' component={DiscoverPage}/>
               <PublicRoute exact path='/login' component={LoginPage}/>

@@ -19,7 +19,7 @@ class HomePage extends React.Component{
   }
 
   render() {
-    const {recipes, searchValue, user } = this.props;
+    const { filterList, recipes, searchValue, user } = this.props;
 
     //Toggle recipe header when search is active
     let headerMessage;
@@ -36,14 +36,14 @@ class HomePage extends React.Component{
         </div>
         <div className='pageContentSection headerPage'>
           <h1 className='headline'>{headerMessage}</h1>
-          {(user !== 'initialLoadUser') && (
+          {(recipes) && (
             <RecipeList
-              filterList={this.props.filterList}
+              filterList={filterList}
               recipes={recipes}
               searchValue={searchValue}
             />
           )}
-          {(user !== 'initialLoadUser' && !recipes) && (
+          {(!recipes) && (
             <div className='emptyContentMessage'>
               <h2>There's nothing here!</h2>
               <p>Select <Link to='/discover-recipes'>Discover Recipes</Link> to find new recipes or click <Link to='/edit-recipe'>Add Recipe</Link> below to create your own!</p>

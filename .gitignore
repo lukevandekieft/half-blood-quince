@@ -10,6 +10,7 @@
 /build
 src/constants/edamamConfig.js
 src/constants/firebaseConfig.js
+src/constants/guestId.js
 
 # misc
 .DS_Store

@@ -45,7 +45,7 @@ class DiscoverPage extends React.Component{
       recipeDisplay =
         <React.Fragment>
           {headerMessage}
-          {(user !== 'initialLoadUser') && (
+          {(!user.guestUser) && (
             <RecipeList
               recipes={searchList}
               searchValue={null}

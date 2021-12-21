@@ -34,10 +34,10 @@ function MenuModal(props) {
       <div className='modal-body'>
         <div className='accordion-list'>
           <div className='accordion-footer'>
-            { (!props.user.uid || props.user.uid === 'initialLoadUser') && (
+            { (!props.user.uid || !props.user.guestUser) && (
               <button className='loginLogout button-white' onClick={() => {handleLogin('google');}}>Login</button>)
             }
-            { (props.user.uid && props.user.uid !== 'initialLoadUser') && (
+            { (props.user.uid && !props.user.guestUser) && (
               <React.Fragment>
                 <div onClick={() => {handleRoute('/');}}>
                   <NavButton
