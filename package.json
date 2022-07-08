@@ -8,7 +8,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "firebase": "^7.19.0",
     "firebaseui": "^4.6.1",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "node-sass": "^4.14.1",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",
